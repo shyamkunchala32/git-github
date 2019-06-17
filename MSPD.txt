@@ -11,3 +11,31 @@
           NSData *content = [data retrieveData];
       }];
   }
+
++ (void)consumePtxtFile:(NSString *)path authenticationCallback:(id<MSAuthenticationCallback>)authenticationCallback
+  {
+      // userId can be provided as a hint for authentication
+      [MSProtectedData protectedDataWithProtectedFile:path
+                                           userId:nil
+                           authenticationCallback:authenticationCallback
+                                          options:Default
+                                  completionBlock:^(MSProtectedData *data, NSError *error)
+      {
+          //Read the content from the ProtectedData, this will decrypt the data
+          NSData *content = [data retrieveData];
+      }];
+  }
+
++ (void)consumePtxtFile:(NSString *)path authenticationCallback:(id<MSAuthenticationCallback>)authenticationCallback
+  {
+      // userId can be provided as a hint for authentication
+      [MSProtectedData protectedDataWithProtectedFile:path
+                                           userId:nil
+                           authenticationCallback:authenticationCallback
+                                          options:Default
+                                  completionBlock:^(MSProtectedData *data, NSError *error)
+      {
+          //Read the content from the ProtectedData, this will decrypt the data
+          NSData *content = [data retrieveData];
+      }];
+  }
